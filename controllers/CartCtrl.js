@@ -97,7 +97,7 @@ class CartCtrl {
             const cart = await Cart.findOne({user: userId})
             if (!cart) {
                 res.send(false)
-                return console.log("Something happened. Can't fetch your cat")
+                return console.log("Something happened. Can't fetch your cart")
             }
             const productIndex = cart.list_of_products.findIndex(p => p.product.toString() === productId)
             if (productIndex === -1) {
